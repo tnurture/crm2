@@ -1,0 +1,22 @@
+.SearchContainer{
+    max-width: 240px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 4px 10px #000;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+   /* // background: #fff; */
+   top: 65px;
+   background-image: linear-gradient(to right top, #051937, #57b6ef, #008793, #19b274, #b9d972);}
+.SearchContainer h3{
+    box-shadow: 0 0 6px inset #ccc;
+    padding: 15px 10px;
+    margin-top: 0;
+}
+.SpacingTopLarge{
+    margin-top: 30px;
+}
+.SpacingSmallLeftSpacing{
+    margin-left: 10px;
+}

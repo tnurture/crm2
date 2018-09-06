@@ -1,0 +1,21 @@
+.RowDetail{
+    background: #fff;
+    box-shadow: 0 0 6px #ccc;
+    height: 100%;
+    }
+.rowDetailHeader{
+    padding: 5px 15px;
+    box-shadow: 0 0 6px #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.RowDetail svg{
+    color: #000;
+    cursor: pointer;
+}
+.TabContainer{
+    padding: 10px 15px;
+    border-top: 1px solid #ccc;
+    min-height: 200px;
+}
