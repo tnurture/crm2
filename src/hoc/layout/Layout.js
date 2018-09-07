@@ -89,7 +89,7 @@ const styles = theme => ({
 
 class Layout extends React.Component {
   state = {
-    open: true,
+    open: false,
   };
 
   handleDrawerOpen = () => {
@@ -104,7 +104,7 @@ class Layout extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <div className={classes.root} >
        <Header  handleDrawerClose={this.handleDrawerClose} handleDrawerOpen ={this.handleDrawerOpen} drawerWidth={drawerWidth}  open={this.state.open} />
         <Drawer 
           variant="permanent" 

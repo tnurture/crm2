@@ -14,34 +14,27 @@ class Report extends Component {
   agGridContainerClasses=[StyleCss.agGridContainer];
 state={
     columnDefs: [
-      {headerName: "Make", field: "make"},
-      {headerName: "Model", field: "model"},
-      {headerName: "Price", field: "price"},
-      {headerName: "Price1", field: "price1"},
-      {headerName: "Price2", field: "price2"},
-      {headerName: "Price3", field: "price3"}
+      {headerName: "customer name", field: "customer_name", filter: "agNumberColumnFilter"},
+      {headerName: "assigned to", field: "assigned_to", filter: "agNumberColumnFilter"},
+      {headerName: "city", field: "city", filter: "agNumberColumnFilter"},
+      {headerName: "primary contact", field: "primary_contact", filter: "agNumberColumnFilter"},
+      {headerName: "status", field: "status", filter: "agNumberColumnFilter"},
+      {headerName: "follow up", field: "follow_up", filter: "agNumberColumnFilter"},
+      {headerName: "last contact", field: "last_contact", filter: "agNumberColumnFilter"}
   
   ],
   
   rowData: [
-      {make: "Toyota", model: "Celica1", price: 135000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota1", model: "Celica2", price: 325000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota2", model: "Celica3", price: 35000, price1: 5000,price2: 35000,price3: 35000},
-      {make: "Toyota3", model: "Celica4", price: 345000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota4", model: "Celica", price: 35000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota5", model: "Celica6", price: 35000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota6", model: "Celica", price: 325000, price1: 45000,price2: 35000,price3: 35000},
-      {make: "Toyot7a", model: "Celica", price: 35000, price1: 75000,price2: 35000,price3: 35000},
-      {make: "Toyota8", model: "Celica", price: 35000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota", model: "Celica1", price: 135000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota1", model: "Celica2", price: 325000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota2", model: "Celica3", price: 35000, price1: 5000,price2: 35000,price3: 35000},
-      {make: "Toyota3", model: "Celica4", price: 345000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota4", model: "Celica", price: 35000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota5", model: "Celica6", price: 35000, price1: 35000,price2: 35000,price3: 35000},
-      {make: "Toyota6", model: "Celica", price: 325000, price1: 45000,price2: 35000,price3: 35000},
-      {make: "Toyot7a", model: "Celica", price: 35000, price1: 75000,price2: 35000,price3: 35000},
-      {make: "Toyota8", model: "Celica", price: 35000, price1: 35000,price2: 35000,price3: 35000},
+      {customer_name: "Ryman Healthcare", assigned_to: "Joe Russul", city: "New York", primary_contact: "simon cleland", status: "leads", follow_up: "19 July 2018", last_contact: "56 days ago"},
+      {customer_name: "Fonterra", assigned_to: "Richard", city: "Taupo", primary_contact: "phil colis", status: "leads", follow_up: "15 July 2018", last_contact: "56 days ago"},
+      {customer_name: "BestStart", assigned_to: "Joe Russul", city: "New York", primary_contact: "simon cleland", status: "Meeting Held", follow_up: "19 July 2018", last_contact: "16 days ago"},
+      {customer_name: "Hamish hepbum", assigned_to: "Mike Hoyle", city: "Hamilton", primary_contact: "simon cleland", status: "leads", follow_up: "19 July 2018", last_contact: "86 days ago"},
+      {customer_name: "Silver Firm", assigned_to: "Joe Russul", city: "New York", primary_contact: "phil colis", status: "Meeting Held", follow_up: "19 July 2018", last_contact: "26 days ago"},
+      {customer_name: "City Care", assigned_to: "Richard", city: "Mankau City", primary_contact: "simon cleland", status: "Customer", follow_up: "19 July 2018", last_contact: "6 days ago"},
+      {customer_name: "Tiwai Point", assigned_to: "Joe Russul", city: "Hamilton", primary_contact: "phil colis", status: "leads", follow_up: "18 July 2018", last_contact: "5 days ago"},
+      {customer_name: "Silver Firm", assigned_to: "Joe Russul", city: "Hamilton", primary_contact: "simon cleland", status: "Meeting Held", follow_up: "16 July 2018", last_contact: "26 days ago"},
+      {customer_name: "BestStart", assigned_to: "Mike Hoyle", city: "New York", primary_contact: "simon cleland", status: "leads", follow_up: "17 July 2018", last_contact: "46 days ago"},
+     
   ],
   rowSelection: "single",
   tableRowDetailOpen:false,
@@ -56,6 +49,7 @@ state={
   onGridReady(params) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
+   
   }
 
   detailRowCloseHandler=()=>{
@@ -69,6 +63,10 @@ state={
 
 // search btn handler
 searchHandler=event=>{
+  this.setState({ searchBoxState: false});
+
+}
+closeSearchHandler=event=>{
   this.setState({ searchBoxState: false});
 
 }
@@ -99,7 +97,7 @@ if(this.state.tableRowDetailOpen){
 }
  
 if(this.state.searchBoxState){
-  this.SearchDV=( <Search heading="Search Here" searchHandler={this.searchHandler} inputChangeHandler={this.inputChangeHandler}  />)
+  this.SearchDV=( <Search heading="Search Here" closeSearchHandler={this.closeSearchHandler} searchHandler={this.searchHandler} inputChangeHandler={this.inputChangeHandler}  />)
 }
 else{
   this.SearchDV="";
@@ -109,16 +107,18 @@ else{
    return (
      <div>
      {this.SearchDV}
-     <div className={StyleCss.SearchSec}>
-     <h2>Reports</h2>
-     <Button variant="fab" color="secondary" onClick={this.openSearchBox} aria-label="Edit">
-        <SearchIcon/>
-      </Button></div>
+     
       <div className={this.agGridContainerClasses.join(' ')}>
       <div className={StyleCss.gridSec}>
-   <div style={{ height: '60vh', width:'100%'}} className="ag-theme-balham">
+   <div style={{ height: 'calc(58vh + (10px))', width:'100%'}} className="ag-theme-material">
+   <div className={StyleCss.SearchSec}>
+     <h2>List Of Companies</h2>
+     <Button variant="fab" mini  color="secondary" onClick={this.openSearchBox} aria-label="Edit">
+        <SearchIcon/>
+      </Button></div>
    <AgGridReact
    columnDefs={this.state.columnDefs}
+   enableFilter={true}
    rowSelection={this.state.rowSelection}
    onGridReady={this.onGridReady.bind(this)}
    onSelectionChanged={($event)=>this.onSelectionChanged($event)}

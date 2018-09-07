@@ -44,7 +44,7 @@ const styles = theme => ({
 class Login extends Component {
     handleSubmit(event, props) {
         event.preventDefault();
-        props.history.push('/home')
+        props.history.push('/home/dashBoard')
       }
   render() {
     

@@ -8,15 +8,26 @@
     z-index: 100;
    /* // background: #fff; */
    top: 65px;
-   background-image: linear-gradient(to right top, #051937, #57b6ef, #008793, #19b274, #b9d972);}
-.SearchContainer h3{
-    box-shadow: 0 0 6px inset #ccc;
-    padding: 15px 10px;
-    margin-top: 0;
-}
+   background: #fff;}
+   /* background-image: linear-gradient(to right top, #051937, #57b6ef, #008793, #19b274, #b9d972);} */
 .SpacingTopLarge{
     margin-top: 30px;
 }
 .SpacingSmallLeftSpacing{
     margin-left: 10px;
+}
+.SearchHeader svg{
+    color: #000;
+    cursor: pointer;
+}
+.SearchHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 6px inset #ccc;
+    padding: 15px 10px;
+    margin-top: 0;
+}
+.SearchHeader h3{
+    margin: 0;
 }

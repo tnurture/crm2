@@ -2,22 +2,49 @@
 .agGridContainer{
     width: 100%;
 display: flex;
-    height: 60vh;
+    height: 58vh;
 }
 .tableRowDetailConatiner{
-    width: 69%;
+    width: 67%;
     float: left;
-    height: 60vh;
+    height: -moz-calc(58vh + (58px));
+    height: -webkit-calc(58vh + (58px));
+    height: calc(58vh + (62px));
 margin-left: 1%;
 }
 .gridSec{
     width: 100%;
+    box-shadow: 0 -2px 8px #ccc;
 }
 .expanded.agGridContainer .gridSec{
-width: 30%;
+width: 32%;
 }
 .SearchSec{
-    margin-bottom: 20px;
 display: flex;
 justify-content: space-between;
+padding: 15px 20px 10px;
+align-items: center;
 }
+.SearchSec h2{
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.ListTitle{
+    padding: 30px 10px 10px 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 0;
+    margin-top: 0;
+}
+h2{
+    font-size: 1.3em;
+}
+@media only screen and (max-width: 600px) {
+    .tableRowDetailConatiner{
+        width: 79%;
+    }
+    .expanded.agGridContainer .gridSec{
+        width: 20%;
+        }
+}    

@@ -54,7 +54,7 @@ class Dashboard extends Component {
    DashBoard
    </div> <Grid container>
     
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
         
         <Bar
         data={data}
@@ -64,7 +64,7 @@ class Dashboard extends Component {
         }}
       />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
         
         <Line data={data1} />
         </Grid>

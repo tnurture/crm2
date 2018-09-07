@@ -8,11 +8,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import Collapse from '@material-ui/core/Collapse';
 import HomeIcon from '@material-ui/icons/Home';
 // import UserIcon from  '@material-ui/icons/PermIdentity';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ReportIcon from  '@material-ui/icons/BugReport';
 // import ExpandLess from '@material-ui/icons/ExpandLess';
 // import ExpandMore from '@material-ui/icons/ExpandMore';
 //import styleClasse from './SideBarMenu.css';
+import LogoutIcon from '@material-ui/icons/FormatClear';
 const styles = theme => ({
   nested: {
     paddingLeft: theme.spacing.unit * 2,
@@ -50,6 +51,7 @@ function SidebarMenu(props) {
     <div>
    
       <List component="nav" >
+      <NavLink to="/home/dashboard" title="Home">
         <ListItem classes={{
           gutters: classes.gutters // class name, e.g. `classes-nesting-label-x`
         }} selected={props.selectedindex === 1} selectedindex="1" button>
@@ -58,12 +60,13 @@ function SidebarMenu(props) {
           root:classes.svgColor
         }} />
       </ListItemIcon>
-          <Link to="/home"> <ListItemText classes={{
+          <ListItemText classes={{
             root: classes.listColor,
             primary:classes.childTextItem
-          }}  inset primary="DashBoard"  />  </Link>
+          }}  inset primary="DashBoard"  />  
          
-      </ListItem>
+      </ListItem></NavLink>
+      <NavLink to="/home/report" title="Report">
    <ListItem classes={{
           gutters: classes.gutters, // class name, e.g. `classes-nesting-label-x`
         }} selected={props.selectedindex === 4} selectedindex="4" button>
@@ -72,26 +75,27 @@ function SidebarMenu(props) {
           root:classes.svgColor
         }} />
       </ListItemIcon>
-          <Link to="/home/report"> <ListItemText classes={{
+           <ListItemText classes={{
             root: classes.listColor,
             primary:classes.childTextItem
-          }}  inset primary="Reports" /></Link>
+          }}  inset primary="Reports" />
         
-        </ListItem>
+        </ListItem></NavLink>
+        <NavLink to="/logout" title="Logout">
         <ListItem classes={{
           gutters: classes.gutters, // class name, e.g. `classes-nesting-label-x`
         }} selected={props.selectedindex === 5} selectedindex="5" button>
         <ListItemIcon>
-        <ReportIcon classes={{
+        <LogoutIcon classes={{
           root:classes.svgColor
         }} />
       </ListItemIcon>
-          <Link to="/"> <ListItemText classes={{
+           <ListItemText classes={{
             root: classes.listColor,
             primary:classes.childTextItem
-          }}  inset primary="Logout" /></Link>
+          }}  inset primary="Logout" />
         
-        </ListItem>
+        </ListItem></NavLink>
       </List>
 
     </div>

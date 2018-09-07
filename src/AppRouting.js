@@ -8,6 +8,7 @@ return  (
     <Switch>
     <Route exact path='/' component={Login}/>
     <Route path="/home" component={Layout}/>
+    <Route path="/logout" component={Login}/>
     </Switch>
 )
   
