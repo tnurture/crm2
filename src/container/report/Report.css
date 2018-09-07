@@ -7,9 +7,6 @@ display: flex;
 .tableRowDetailConatiner{
     width: 67%;
     float: left;
-    height: -moz-calc(58vh + (58px));
-    height: -webkit-calc(58vh + (58px));
-    height: calc(58vh + (62px));
 margin-left: 1%;
 }
 .gridSec{
@@ -48,3 +45,9 @@ h2{
         width: 0%;
         }
 }    
+
+.tableRowDetailConatiner{
+    height: -moz-calc(calc(100vh - 170px));
+    height: -webkit-calc(calc(100vh - 170px));
+    height: calc(calc(100vh - 170px));
+  }

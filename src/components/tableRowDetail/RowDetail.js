@@ -72,7 +72,7 @@ function RowDetail(props) {
   return (
     <div className={classes.RowDetail}>
       <div className={classes.rowDetailHeader}>
-        <Grid container spacing={24} justify="space-between">
+        <Grid container spacing={24} alignItems="center" justify="space-between">
           <Grid item>
             <h3>{griddata.customer_name}</h3>
           </Grid>
