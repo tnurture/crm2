@@ -68,7 +68,6 @@ TabContainer.propTypes = {
 };
 function RowDetail(props) {
   let griddata = props.gridDetailData[0];
-  console.log(griddata)
   let SelctedTab = props.tabvalue;
   return (
     <div className={classes.RowDetail}>

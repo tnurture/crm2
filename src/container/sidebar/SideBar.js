@@ -34,7 +34,6 @@ class SideBar extends React.Component {
   }
   handleClick = (selectedindex) => {
     this.setState(state => ({ open: true, selectedindex:selectedindex }));
-    console.log(selectedindex)
   };
 
   render() {

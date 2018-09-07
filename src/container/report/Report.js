@@ -85,7 +85,6 @@ openSearchBox=event=>{
     //   selectedRowsString += selectedRow.athlete;
     // });
    this.agGridContainerClasses= [StyleCss.agGridContainer, StyleCss.expanded];
-   console.log(this.agGridContainerClasses);
     this.setState(state => ({ tableRowDetailOpen: true, gridDetailData: selectedRows}));
   }
   render() {
@@ -110,7 +109,7 @@ else{
      
       <div className={this.agGridContainerClasses.join(' ')}>
       <div className={StyleCss.gridSec}>
-   <div style={{ height: 'calc(58vh + (10px))', width:'100%'}} className="ag-theme-material">
+   <div className="ag-theme-material agGridReport">
    <div className={StyleCss.SearchSec}>
      <h2>List Of Companies</h2>
      <Button variant="fab" mini  color="secondary" onClick={this.openSearchBox} aria-label="Edit">

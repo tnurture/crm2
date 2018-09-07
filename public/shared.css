@@ -3804,9 +3804,32 @@ ag-grid-angular {
     background: #ede810;
     display: block;
 }
+.agGridReport{
+  width: 100%;
+  height: -moz-calc(100vh - (180px));
+  height: -webkit-calc(100vh - (180px));
+  height: calc(100vh - (180px));
+}
 
 @media only screen and (max-width: 600px) {
   main{
     padding: 10px!Important;
   }
+ 
 }
+
+
+ @media only screen and (max-height: 600px) {
+.agGridReport{
+    height: -moz-calc(60vh);
+    height: -webkit-calc(60vh);
+    height: calc(60vh);
+  }
+} 
+@media only screen and (min-height: 767px) {
+  .agGridReport{
+      height: -moz-calc(70vh);
+      height: -webkit-calc(70vh);
+      height: calc(70vh);
+    }
+  } 
